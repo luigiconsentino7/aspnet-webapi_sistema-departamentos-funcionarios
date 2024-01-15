@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>aspnet_evosystem</name>
+    </assembly>
+    <members>
+        <member name="M:aspnet_evosystem.Controllers.DepartamentoController.Post(aspnet_evosystem.Models.Departamento)">
+             <remarks>
+            
+             ```json
+             {
+                 "nome": "string",
+                 "rg": "string",
+                 "departamentoId": 0
+             }
+             ```
+             </remarks>
+        </member>
+        <member name="M:aspnet_evosystem.Controllers.FuncionarioController.PostFuncionario(aspnet_evosystem.Models.Funcionario)">
+             <remarks>
+            
+             ```json
+             {
+                 "nome": "string",
+                 "rg": "string",
+                 "departamentoId": 0
+             }
+             ```
+             </remarks>
+        </member>
+        <member name="T:aspnet_evosystem.Migrations.firstmigration">
+            <inheritdoc />
+        </member>
+        <member name="M:aspnet_evosystem.Migrations.firstmigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:aspnet_evosystem.Migrations.firstmigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:aspnet_evosystem.Migrations.firstmigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

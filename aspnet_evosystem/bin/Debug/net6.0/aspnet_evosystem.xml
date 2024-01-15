@@ -1,0 +1,153 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>aspnet_evosystem</name>
+    </assembly>
+    <members>
+        <member name="M:aspnet_evosystem.Controllers.DepartamentoController.GetAll">
+            <summary>
+            Listar todos os Departamentos
+            </summary>
+            <returns>Todos os Departamentos ativos</returns>
+            <response code = "200">Sucesso</response>
+        </member>
+        <member name="M:aspnet_evosystem.Controllers.DepartamentoController.GetById(System.Int32)">
+            <summary>
+            Listar um Departamento específico com a lista de Funcionários do Departamento
+            </summary>
+            <param name="id">Identificador do Departamento</param>
+            <returns>Lista de Funcionários cadastrados no Departamento</returns>
+            <reponse code="200">Sucesso</reponse>
+            <response code="404">Departamento não encontrado</response>
+        </member>
+        <member name="M:aspnet_evosystem.Controllers.DepartamentoController.Post(aspnet_evosystem.Models.Departamento)">
+             <summary>
+             Cadastrar um Departamento
+             </summary>
+             <remarks>
+            
+             ```json
+             {
+                 "nome": "string",
+                 "sigla": "string"
+             }
+             ```
+             
+             </remarks>
+             <param name="departamento"></param>
+             <returns>Departamento Criado</returns>
+             <response code="201">Sucesso</response>
+        </member>
+        <member name="M:aspnet_evosystem.Controllers.DepartamentoController.Update(System.Int32,aspnet_evosystem.Models.Departamento)">
+            <summary>
+            Atualizar um Departamento
+            </summary>
+            <param name="id">Identificador do Departamento</param>
+            <param name="input">Dados do Departamento</param>
+            <returns>Nada.</returns>
+            <response code="404">Não encontrado</response>
+            <response code="204">Sucesso</response>
+        </member>
+        <member name="M:aspnet_evosystem.Controllers.DepartamentoController.Inactivate(System.Int32)">
+            <summary>
+            Desativar um Departamento
+            </summary>
+            <param name="id">Identificador do Departamento</param>
+            <returns>Nada.</returns>
+            <response code="404">Não encontrado</response>
+            <response code="204">Sucesso</response>
+        </member>
+        <member name="M:aspnet_evosystem.Controllers.DepartamentoController.Delete(System.Int32)">
+            <summary>
+            Deletar um Departamento
+            </summary>
+            <param name="id">Identificador do Departamento</param>
+            <returns>Nada.</returns>
+            <response code="404">Não encontrado</response>
+            <response code="204">Sucesso</response>
+        </member>
+        <member name="M:aspnet_evosystem.Controllers.FuncionarioController.GetAll">
+            <summary>
+            Listar todos os Funcionários
+            </summary>
+            <returns>Todos os Funcionários ativos</returns>
+            <response code = "200">Sucesso</response>
+        </member>
+        <member name="M:aspnet_evosystem.Controllers.FuncionarioController.GetById(System.Int32)">
+            <summary>
+            Listar um Funcionário específico
+            </summary>
+            <param name="id">Identificador do Funcionário</param>
+            <returns>Funcionário específico</returns>
+            <reponse code="200">Sucesso</reponse>
+            <response code="404">Departamento não encontrado</response>
+        </member>
+        <member name="M:aspnet_evosystem.Controllers.FuncionarioController.PostFuncionario(aspnet_evosystem.Models.Funcionario)">
+             <summary>
+             Cadastrar um Funcionário
+             </summary>
+             <remarks>
+            
+             ```json
+             {
+                 "nome": "string",
+                 "rg": "string",
+                 "departamentoId": 0
+             }
+             ```
+             
+             </remarks>
+             <param name="funcionario"></param>
+             <returns>Funcionário Criado</returns>
+             <response code="201">Sucesso</response>
+        </member>
+        <member name="M:aspnet_evosystem.Controllers.FuncionarioController.Update(System.Int32,aspnet_evosystem.Models.Funcionario)">
+            <summary>
+            Atualizar um Funcionário
+            </summary>
+            <param name="id">Identificador do Funcionário</param>
+            <param name="input">Dados do Funcionário</param>
+            <returns>Nada.</returns>
+            <response code="404">Não encontrado</response>
+            <response code="204">Sucesso</response>
+        </member>
+        <member name="M:aspnet_evosystem.Controllers.FuncionarioController.Disable(System.Int32)">
+            <summary>
+            Desativar um Funcionário
+            </summary>
+            <param name="id">Identificador do Funcionário</param>
+            <returns>Nada.</returns>
+            <response code="404">Não encontrado</response>
+            <response code="204">Sucesso</response>
+        </member>
+        <member name="M:aspnet_evosystem.Controllers.FuncionarioController.Delete(System.Int32)">
+            <summary>
+            Deletar um Funcionário
+            </summary>
+            <param name="id">Identificador do Funcionário</param>
+            <returns>Nada.</returns>
+            <response code="404">Não encontrado</response>
+            <response code="204">Sucesso</response>
+        </member>
+        <member name="M:aspnet_evosystem.Controllers.FuncionarioController.UploadFoto(System.Int32,Microsoft.AspNetCore.Http.IFormFile)">
+            <summary>
+            Upload de Foto de um Funcionário
+            </summary>
+            <param name="funcionarioId">Identificador do Funcionário</param>
+            <param name="file">Arquivo</param>
+            <returns>Botão para Dowload do Arquivo</returns>
+        </member>
+        <member name="T:aspnet_evosystem.Migrations.addmigrationfirstmigration">
+            <inheritdoc />
+        </member>
+        <member name="M:aspnet_evosystem.Migrations.addmigrationfirstmigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:aspnet_evosystem.Migrations.addmigrationfirstmigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:aspnet_evosystem.Migrations.addmigrationfirstmigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>
