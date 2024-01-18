@@ -96,3 +96,4 @@ C:\Users\luigi\OneDrive\Área de Trabalho\projeto_estagio_evosystem_oficial\aspn
 C:\Users\luigi\OneDrive\Área de Trabalho\projeto_estagio_evosystem_oficial\aspnet_evosystem\aspnet_evosystem\bin\Debug\net6.0\System.Web.Http.Cors.dll
 C:\Users\luigi\OneDrive\Área de Trabalho\projeto_estagio_evosystem_oficial\aspnet_evosystem\aspnet_evosystem\bin\Debug\net6.0\Newtonsoft.Json.dll
 C:\Users\luigi\OneDrive\Área de Trabalho\projeto_estagio_evosystem_oficial\aspnet_evosystem\aspnet_evosystem\bin\Debug\net6.0\Newtonsoft.Json.Bson.dll
+C:\Users\luigi\OneDrive\Área de Trabalho\projeto_estagio_evosystem_oficial\aspnet_evosystem\aspnet_evosystem\obj\Debug\net6.0\aspnet_evosystem.sourcelink.json

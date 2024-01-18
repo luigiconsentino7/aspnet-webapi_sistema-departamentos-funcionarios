@@ -68,6 +68,7 @@ namespace aspnet_evosystem.Controllers
         /// ```json
         /// {
         ///     "nome": "string",
+        ///     "sobrenome": "string",
         ///     "rg": "string",
         ///     "departamentoId": 0
         /// }
@@ -188,12 +189,11 @@ namespace aspnet_evosystem.Controllers
         /// <param name="funcionarioId">Identificador do Funcionário</param>
         /// <param name="file">Arquivo</param>
         /// <returns>Botão para Dowload do Arquivo</returns>
-        [HttpPost("UploadImagem {funcionarioId}")]
+        [HttpPost("UploadImagem/{funcionarioId}")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status206PartialContent)]
         [ProducesResponseType(StatusCodes.Status416RangeNotSatisfiable)]
-
         public async Task<ActionResult> UploadFoto(int funcionarioId, IFormFile file)
         {
             try
@@ -214,20 +214,28 @@ namespace aspnet_evosystem.Controllers
                 {
                     await file.CopyToAsync(memoryStream);
 
-                    funcionario.Foto = memoryStream.ToArray();
+                    // Converta os dados binários da imagem em uma representação Base64
+                    var base64Image = Convert.ToBase64String(memoryStream.ToArray());
+
+                    // Gere uma URL temporária para a imagem
+                    var imageUrl = $"data:image/png;base64,{base64Image}";
+
+                    // Atualize a propriedade Foto do funcionário com a URL da imagem
+                    funcionario.Foto = imageUrl;
                 }
 
-                    await _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
 
-                    //return Ok("Imagem Enviada com Sucesso");
-
-                    return File(file.OpenReadStream(), file.ContentType, "FotoFuncionario.png");
+                // Retorne a URL da imagem como resultado
+                return Ok(new { Link = funcionario.Foto });
             }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status500InternalServerError, $"Erro interno do servidor: {ex.Message}");
             }
         }
+
+
 
     }
 }

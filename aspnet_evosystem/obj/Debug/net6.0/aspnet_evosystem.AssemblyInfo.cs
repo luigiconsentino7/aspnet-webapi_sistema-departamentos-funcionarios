@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("aspnet_evosystem")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ffcb14a92eb1dcb264fcfa489699a1d58ae8de39")]
 [assembly: System.Reflection.AssemblyProductAttribute("aspnet_evosystem")]
 [assembly: System.Reflection.AssemblyTitleAttribute("aspnet_evosystem")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

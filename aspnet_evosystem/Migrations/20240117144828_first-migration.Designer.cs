@@ -11,8 +11,8 @@ using aspnet_evosystem.Data;
 namespace aspnet_evosystem.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240115143431_add-migration first-migration")]
-    partial class addmigrationfirstmigration
+    [Migration("20240117144828_first-migration")]
+    partial class firstmigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -62,8 +62,8 @@ namespace aspnet_evosystem.Migrations
                     b.Property<int>("DepartamentoId")
                         .HasColumnType("int");
 
-                    b.Property<byte[]>("Foto")
-                        .HasColumnType("varbinary(max)");
+                    b.Property<string>("Foto")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Nome")
                         .IsRequired()

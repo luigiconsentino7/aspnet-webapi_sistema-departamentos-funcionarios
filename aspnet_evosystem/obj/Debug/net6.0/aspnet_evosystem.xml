@@ -91,6 +91,7 @@
              ```json
              {
                  "nome": "string",
+                 "sobrenome": "string",
                  "rg": "string",
                  "departamentoId": 0
              }
@@ -137,16 +138,16 @@
             <param name="file">Arquivo</param>
             <returns>Botão para Dowload do Arquivo</returns>
         </member>
-        <member name="T:aspnet_evosystem.Migrations.addmigrationfirstmigration">
+        <member name="T:aspnet_evosystem.Migrations.firstmigration">
             <inheritdoc />
         </member>
-        <member name="M:aspnet_evosystem.Migrations.addmigrationfirstmigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:aspnet_evosystem.Migrations.firstmigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:aspnet_evosystem.Migrations.addmigrationfirstmigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:aspnet_evosystem.Migrations.firstmigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:aspnet_evosystem.Migrations.addmigrationfirstmigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:aspnet_evosystem.Migrations.firstmigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>
