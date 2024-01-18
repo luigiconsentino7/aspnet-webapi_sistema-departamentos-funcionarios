@@ -2,7 +2,6 @@
 using aspnet_evosystem.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using System.Reflection.Metadata.Ecma335;
 
 namespace aspnet_evosystem.Controllers
 {
@@ -144,6 +143,31 @@ namespace aspnet_evosystem.Controllers
 
             _context.SaveChanges();
 
+            return NoContent();
+        }
+
+        /// <summary>
+        /// Ativar um Departamento
+        /// </summary>
+        /// <param name="id">Identificador do Departamento</param>
+        /// <returns>Nada.</returns>
+        /// <response code="404">Não encontrado</response>
+        /// <response code="204">Sucesso</response>
+        [HttpPost("EnableDepartamento {id}")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public IActionResult Enable(int id)
+        {
+            var departamento = _context.DepartamentosDb.SingleOrDefault(d => d.Id == id);
+
+            if (departamento == null)
+            {
+                return NotFound("Departamento não encontrado.");
+            }
+
+            departamento.EnableDepartamento();
+
+            _context.SaveChanges();
             return NoContent();
         }
 

@@ -2,9 +2,6 @@
 using aspnet_evosystem.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Http;
-using System.IO;
-using System.Threading.Tasks;
 
 namespace aspnet_evosystem.Controllers
 {
@@ -158,6 +155,31 @@ namespace aspnet_evosystem.Controllers
         }
 
         /// <summary>
+        /// Ativar um Funcionário
+        /// </summary>
+        /// <param name="id">Identificador do Funcionário</param>
+        /// <returns>Nada.</returns>
+        /// <response code="404">Não encontrado</response>
+        /// <response code="204">Sucesso</response>
+        [HttpPost("EnableFuncionario {id}")]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        public IActionResult Enable(int id)
+        {
+            var funcionario = _context.FuncionariosDb.SingleOrDefault(f => f.Id == id);
+
+            if (funcionario == null)
+            {
+                return NotFound("Funcionário não encontrado.");
+            }
+
+            funcionario.EnableFuncionario();
+
+            _context.SaveChanges();
+            return NoContent();
+        }
+
+        /// <summary>
         /// Deletar um Funcionário
         /// </summary>
         /// <param name="id">Identificador do Funcionário</param>
@@ -214,19 +236,15 @@ namespace aspnet_evosystem.Controllers
                 {
                     await file.CopyToAsync(memoryStream);
 
-                    // Converta os dados binários da imagem em uma representação Base64
                     var base64Image = Convert.ToBase64String(memoryStream.ToArray());
 
-                    // Gere uma URL temporária para a imagem
                     var imageUrl = $"data:image/png;base64,{base64Image}";
 
-                    // Atualize a propriedade Foto do funcionário com a URL da imagem
                     funcionario.Foto = imageUrl;
                 }
 
                 await _context.SaveChangesAsync();
 
-                // Retorne a URL da imagem como resultado
                 return Ok(new { Link = funcionario.Foto });
             }
             catch (Exception ex)

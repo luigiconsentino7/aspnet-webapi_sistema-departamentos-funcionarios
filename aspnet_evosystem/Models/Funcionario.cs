@@ -1,6 +1,4 @@
-﻿using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
-
+﻿
 namespace aspnet_evosystem.Models
 {
     public class Funcionario
@@ -26,6 +24,11 @@ namespace aspnet_evosystem.Models
         public void DisableFuncionario()
         {
             Ativo = false;
+        }
+
+        public void EnableFuncionario()
+        {
+            Ativo = true;
         }
     }
 }

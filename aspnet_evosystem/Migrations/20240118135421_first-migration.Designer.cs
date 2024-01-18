@@ -11,7 +11,7 @@ using aspnet_evosystem.Data;
 namespace aspnet_evosystem.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240117144828_first-migration")]
+    [Migration("20240118135421_first-migration")]
     partial class firstmigration
     {
         /// <inheritdoc />

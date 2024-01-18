@@ -1,7 +1,4 @@
-﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Text.Json.Serialization;
-
+﻿
 namespace aspnet_evosystem.Models
 {
     public class Departamento
@@ -24,6 +21,11 @@ namespace aspnet_evosystem.Models
         public void DisableDepartamento()
         {
             Ativo = false;
+        }
+
+        public void EnableDepartamento()
+        {
+            Ativo = true;
         }
     }
 }
