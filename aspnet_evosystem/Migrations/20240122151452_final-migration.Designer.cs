@@ -11,8 +11,8 @@ using aspnet_evosystem.Data;
 namespace aspnet_evosystem.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20240118135421_first-migration")]
-    partial class firstmigration
+    [Migration("20240122151452_final-migration")]
+    partial class finalmigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

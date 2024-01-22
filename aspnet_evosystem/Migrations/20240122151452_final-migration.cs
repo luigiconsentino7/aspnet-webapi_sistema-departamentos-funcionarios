@@ -5,7 +5,7 @@
 namespace aspnet_evosystem.Migrations
 {
     /// <inheritdoc />
-    public partial class firstmigration : Migration
+    public partial class finalmigration : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)

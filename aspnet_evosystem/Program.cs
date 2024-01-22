@@ -9,7 +9,6 @@ using System.Text.Json.Serialization;
 var builder = WebApplication.CreateBuilder(args);
 
 
-// Add services to the container.
 builder.Services.AddControllers().AddJsonOptions(x =>
    x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve);
 
@@ -21,7 +20,6 @@ builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConectionDb"));
 });
 
-// Adicione serviços do Swagger.
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -41,7 +39,6 @@ builder.Services.AddSwaggerGen(c =>
     c.IncludeXmlComments(xmlPath);
 
 
-    // Adicione as linhas abaixo para incluir exemplos nos modelos JSON
     c.SchemaFilter<SwaggerExampleFilter>();
 });
 
@@ -49,8 +46,6 @@ builder.Services.AddSwaggerGen(c =>
 var app = builder.Build();
 
 
-
-// Configure o pipeline de solicitações HTTP.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -60,7 +55,6 @@ if (app.Environment.IsDevelopment())
     });
 }
 
-// Configuração do CORS
 app.UseCors(builder =>
 {
     builder.AllowAnyOrigin()

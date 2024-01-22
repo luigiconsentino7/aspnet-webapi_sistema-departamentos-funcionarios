@@ -32,13 +32,13 @@ namespace aspnet_evosystem.Controllers
         }
 
         /// <summary>
-        /// Listar um Departamento específico com a lista de Funcionários do Departamento
+        /// Listar um Departamento específico por ID com a lista de Funcionários do Departamento
         /// </summary>
         /// <param name="id">Identificador do Departamento</param>
         /// <returns>Lista de Funcionários cadastrados no Departamento</returns>
         /// <reponse code="200">Sucesso</reponse>
         /// <response code="404">Departamento não encontrado</response>
-        [HttpGet("GetDepartamentos {id}")]
+        [HttpGet("GetDepartamento/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetById(int id)
@@ -91,14 +91,14 @@ namespace aspnet_evosystem.Controllers
         }
 
         /// <summary>
-        /// Atualizar um Departamento
+        /// Atualizar um Departamento por ID
         /// </summary>
         /// <param name="id">Identificador do Departamento</param>
         /// <param name="input">Dados do Departamento</param>
         /// <returns>Nada.</returns>
         /// <response code="404">Não encontrado</response>
         /// <response code="204">Sucesso</response>
-        [HttpPut("UpdateDepartamento {id}")]
+        [HttpPut("UpdateDepartamento/{id}")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public IActionResult Update(int id, Departamento input)
@@ -121,13 +121,13 @@ namespace aspnet_evosystem.Controllers
         }
 
         /// <summary>
-        /// Desativar um Departamento
+        /// Desativar um Departamento por ID
         /// </summary>
         /// <param name="id">Identificador do Departamento</param>
         /// <returns>Nada.</returns>
         /// <response code="404">Não encontrado</response>
         /// <response code="204">Sucesso</response>
-        [HttpDelete("DisableDepartamento {id}")]
+        [HttpDelete("DisableDepartamento/{id}")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public IActionResult Inactivate(int id)
@@ -147,13 +147,13 @@ namespace aspnet_evosystem.Controllers
         }
 
         /// <summary>
-        /// Ativar um Departamento
+        /// Ativar um Departamento por ID
         /// </summary>
         /// <param name="id">Identificador do Departamento</param>
         /// <returns>Nada.</returns>
         /// <response code="404">Não encontrado</response>
         /// <response code="204">Sucesso</response>
-        [HttpPost("EnableDepartamento {id}")]
+        [HttpPost("EnableDepartamento/{id}")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public IActionResult Enable(int id)
@@ -172,7 +172,7 @@ namespace aspnet_evosystem.Controllers
         }
 
         /// <summary>
-        /// Deletar um Departamento
+        /// Deletar um Departamento por ID
         /// </summary>
         /// <param name="id">Identificador do Departamento</param>
         /// <returns>Nada.</returns>

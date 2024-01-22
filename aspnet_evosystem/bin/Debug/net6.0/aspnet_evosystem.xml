@@ -13,7 +13,7 @@
         </member>
         <member name="M:aspnet_evosystem.Controllers.DepartamentoController.GetById(System.Int32)">
             <summary>
-            Listar um Departamento específico com a lista de Funcionários do Departamento
+            Listar um Departamento específico por ID com a lista de Funcionários do Departamento
             </summary>
             <param name="id">Identificador do Departamento</param>
             <returns>Lista de Funcionários cadastrados no Departamento</returns>
@@ -40,7 +40,7 @@
         </member>
         <member name="M:aspnet_evosystem.Controllers.DepartamentoController.Update(System.Int32,aspnet_evosystem.Models.Departamento)">
             <summary>
-            Atualizar um Departamento
+            Atualizar um Departamento por ID
             </summary>
             <param name="id">Identificador do Departamento</param>
             <param name="input">Dados do Departamento</param>
@@ -50,7 +50,7 @@
         </member>
         <member name="M:aspnet_evosystem.Controllers.DepartamentoController.Inactivate(System.Int32)">
             <summary>
-            Desativar um Departamento
+            Desativar um Departamento por ID
             </summary>
             <param name="id">Identificador do Departamento</param>
             <returns>Nada.</returns>
@@ -59,7 +59,7 @@
         </member>
         <member name="M:aspnet_evosystem.Controllers.DepartamentoController.Enable(System.Int32)">
             <summary>
-            Ativar um Departamento
+            Ativar um Departamento por ID
             </summary>
             <param name="id">Identificador do Departamento</param>
             <returns>Nada.</returns>
@@ -68,7 +68,7 @@
         </member>
         <member name="M:aspnet_evosystem.Controllers.DepartamentoController.Delete(System.Int32)">
             <summary>
-            Deletar um Departamento
+            Deletar um Departamento por ID
             </summary>
             <param name="id">Identificador do Departamento</param>
             <returns>Nada.</returns>
@@ -84,7 +84,7 @@
         </member>
         <member name="M:aspnet_evosystem.Controllers.FuncionarioController.GetById(System.Int32)">
             <summary>
-            Listar um Funcionário específico
+            Listar um Funcionário específico por ID
             </summary>
             <param name="id">Identificador do Funcionário</param>
             <returns>Funcionário específico</returns>
@@ -113,7 +113,7 @@
         </member>
         <member name="M:aspnet_evosystem.Controllers.FuncionarioController.Update(System.Int32,aspnet_evosystem.Models.Funcionario)">
             <summary>
-            Atualizar um Funcionário
+            Atualizar um Funcionário por ID
             </summary>
             <param name="id">Identificador do Funcionário</param>
             <param name="input">Dados do Funcionário</param>
@@ -123,7 +123,7 @@
         </member>
         <member name="M:aspnet_evosystem.Controllers.FuncionarioController.Disable(System.Int32)">
             <summary>
-            Desativar um Funcionário
+            Desativar um Funcionário por ID
             </summary>
             <param name="id">Identificador do Funcionário</param>
             <returns>Nada.</returns>
@@ -132,7 +132,7 @@
         </member>
         <member name="M:aspnet_evosystem.Controllers.FuncionarioController.Enable(System.Int32)">
             <summary>
-            Ativar um Funcionário
+            Ativar um Funcionário por ID
             </summary>
             <param name="id">Identificador do Funcionário</param>
             <returns>Nada.</returns>
@@ -141,7 +141,7 @@
         </member>
         <member name="M:aspnet_evosystem.Controllers.FuncionarioController.Delete(System.Int32)">
             <summary>
-            Deletar um Funcionário
+            Deletar um Funcionário por ID
             </summary>
             <param name="id">Identificador do Funcionário</param>
             <returns>Nada.</returns>
@@ -150,22 +150,22 @@
         </member>
         <member name="M:aspnet_evosystem.Controllers.FuncionarioController.UploadFoto(System.Int32,Microsoft.AspNetCore.Http.IFormFile)">
             <summary>
-            Upload de Foto de um Funcionário
+            Upload de Foto de um Funcionário por ID
             </summary>
             <param name="funcionarioId">Identificador do Funcionário</param>
             <param name="file">Arquivo</param>
             <returns>Botão para Dowload do Arquivo</returns>
         </member>
-        <member name="T:aspnet_evosystem.Migrations.firstmigration">
+        <member name="T:aspnet_evosystem.Migrations.finalmigration">
             <inheritdoc />
         </member>
-        <member name="M:aspnet_evosystem.Migrations.firstmigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:aspnet_evosystem.Migrations.finalmigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:aspnet_evosystem.Migrations.firstmigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+        <member name="M:aspnet_evosystem.Migrations.finalmigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
             <inheritdoc />
         </member>
-        <member name="M:aspnet_evosystem.Migrations.firstmigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+        <member name="M:aspnet_evosystem.Migrations.finalmigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

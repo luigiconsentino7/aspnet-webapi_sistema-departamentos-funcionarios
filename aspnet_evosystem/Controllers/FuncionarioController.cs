@@ -28,20 +28,19 @@ namespace aspnet_evosystem.Controllers
         public IActionResult GetAll()
         {
             var funcionario = _context.FuncionariosDb
-                .Include(d => d.Departamento)
-                .Where(d => d.Ativo).ToList();
+                .Include(d => d.Departamento);
 
             return Ok(funcionario);
         }
 
         /// <summary>
-        /// Listar um Funcionário específico
+        /// Listar um Funcionário específico por ID
         /// </summary>
         /// <param name="id">Identificador do Funcionário</param>
         /// <returns>Funcionário específico</returns>
         /// <reponse code="200">Sucesso</reponse>
         /// <response code="404">Departamento não encontrado</response>
-        [HttpGet("GetFuncionario {id}")]
+        [HttpGet("GetFuncionario/{id}")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         public IActionResult GetById(int id)
@@ -99,14 +98,14 @@ namespace aspnet_evosystem.Controllers
         }
 
         /// <summary>
-        /// Atualizar um Funcionário
+        /// Atualizar um Funcionário por ID
         /// </summary>
         /// <param name="id">Identificador do Funcionário</param>
         /// <param name="input">Dados do Funcionário</param>
         /// <returns>Nada.</returns>
         /// <response code="404">Não encontrado</response>
         /// <response code="204">Sucesso</response>
-        [HttpPut("UpdateFuncionario {id}")]
+        [HttpPut("UpdateFuncionario/{id}")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public IActionResult Update(int id, Funcionario input)
@@ -130,13 +129,13 @@ namespace aspnet_evosystem.Controllers
         }
 
         /// <summary>
-        /// Desativar um Funcionário
+        /// Desativar um Funcionário por ID
         /// </summary>
         /// <param name="id">Identificador do Funcionário</param>
         /// <returns>Nada.</returns>
         /// <response code="404">Não encontrado</response>
         /// <response code="204">Sucesso</response>
-        [HttpDelete("DisableFuncionario {id}")]
+        [HttpDelete("DisableFuncionario/{id}")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public IActionResult Disable(int id)
@@ -155,13 +154,13 @@ namespace aspnet_evosystem.Controllers
         }
 
         /// <summary>
-        /// Ativar um Funcionário
+        /// Ativar um Funcionário por ID
         /// </summary>
         /// <param name="id">Identificador do Funcionário</param>
         /// <returns>Nada.</returns>
         /// <response code="404">Não encontrado</response>
         /// <response code="204">Sucesso</response>
-        [HttpPost("EnableFuncionario {id}")]
+        [HttpPost("EnableFuncionario/{id}")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public IActionResult Enable(int id)
@@ -180,13 +179,13 @@ namespace aspnet_evosystem.Controllers
         }
 
         /// <summary>
-        /// Deletar um Funcionário
+        /// Deletar um Funcionário por ID
         /// </summary>
         /// <param name="id">Identificador do Funcionário</param>
         /// <returns>Nada.</returns>
         /// <response code="404">Não encontrado</response>
         /// <response code="204">Sucesso</response>
-        [HttpDelete("DeleteFuncionario {id}")]
+        [HttpDelete("DeleteFuncionario/{id}")]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         public IActionResult Delete(int id)
@@ -206,7 +205,7 @@ namespace aspnet_evosystem.Controllers
         }
 
         /// <summary>
-        /// Upload de Foto de um Funcionário
+        /// Upload de Foto de um Funcionário por ID
         /// </summary>
         /// <param name="funcionarioId">Identificador do Funcionário</param>
         /// <param name="file">Arquivo</param>
@@ -229,7 +228,7 @@ namespace aspnet_evosystem.Controllers
 
                 if (file == null || file.Length == 0)
                 {
-                    return BadRequest("Arquivo inválido ou ausente");
+                    return BadRequest("Arquivo inválido");
                 }
 
                 using (var memoryStream = new MemoryStream())
