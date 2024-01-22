@@ -7,9 +7,7 @@ namespace aspnet_evosystem.Data
     public class AppDbContext : DbContext
     {
 
-        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
-        {
-        }
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {}
 
         public DbSet<Funcionario> FuncionariosDb { get; set; }
         public DbSet<Departamento> DepartamentosDb { get; set;}
@@ -27,7 +25,6 @@ namespace aspnet_evosystem.Data
         }
 
     }
-
 
  }
 
